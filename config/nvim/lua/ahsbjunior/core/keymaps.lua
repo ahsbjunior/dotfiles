@@ -36,3 +36,6 @@ keymap.set("i", "<C-v>", "<C-r>+", {desc = "Paste with CTRL-V in Insert Mode"}) 
 -- New line
 keymap.set("n", "<CR>", "0o<esc>", { desc = "Press enter to add new line" }) -- Pressionar ENTER pra adicionar nova linha
 keymap.set("n", "<S-CR>", "O<esc>", { desc = "Press shift-enter to add new line above" }) -- Pressionar SHIFT-ENTER pra adicionar nova linha acima
+
+-- Select all
+keymap.set("n", "<C-a>", "ggVG", {desc = "CTRL-A to select all"})
