@@ -1,0 +1,14 @@
+modmap:
+  - name: escapando SUPER
+    remap:
+      KEY_LEFTMETA:
+        held: KEY_RIGHTCTRL
+        alone: KEY_LEFTMETA
+        alone_timeout_millis: 500
+keymap:
+  - name: Mac Home End Keys
+    remap:
+      Control_R-KEY_LEFT: KEY_HOME
+      Control_R-KEY_RIGHT: KEY_END
+      Control_R-KEY_UP: CONTROL-KEY_HOME
+      Control_R-KEY_DOWN: CONTROL-KEY_END

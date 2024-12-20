@@ -4,9 +4,9 @@ ln config/starship.toml ~/.config/
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 # NVIM
-sudo dnf install nodejs
-sudo dnf install ripgrep
-sudo dnf install lua
+sudo apt install nodejs
+sudo apt install ripgrep
+sudo apt install lua
 ln -s $(pwd)/config/nvim ~/.config/
 
 # KITTY
