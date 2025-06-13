@@ -5,11 +5,20 @@ ln config/starship.toml ~/.config/
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 # NVIM
+echo "==== INSTALANDO NODEJS"
 sudo apt install nodejs
+
+echo "==== INSTALANDO RIPGREP"
 sudo apt install ripgrep
+
+echo "==== INSTALANDO LUA"
 sudo apt install lua
+
+echo "==== COPIANDO ARQUIVOS DO NEOVIM"
 ln -s $(pwd)/config/nvim ~/.config/
 
+
+echo "COPIANDO ARQUIVOS DO KITTY" 
 # KITTY
 ln -s $(pwd)/config/kitty ~/.config/
 
