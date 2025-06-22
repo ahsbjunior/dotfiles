@@ -39,3 +39,6 @@ keymap.set("n", "<S-CR>", "O<esc>", { desc = "Press shift-enter to add new line 
 
 -- Select all
 keymap.set("n", "<C-a>", "ggVG", {desc = "CTRL-A to select all"})
+
+-- Comentarios em python
+keymap.set("v", "<leader>c#", ":'<,'>s:^:#<CR>", {desc = "Add # to comment Python code."})
