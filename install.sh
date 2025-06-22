@@ -17,10 +17,22 @@ sudo apt install lua
 echo "==== COPIANDO ARQUIVOS DO NEOVIM"
 ln -s $(pwd)/config/nvim ~/.config/
 
-
 echo "COPIANDO ARQUIVOS DO KITTY" 
+
 # KITTY
 ln -s $(pwd)/config/kitty ~/.config/
+
+
+# Pergunta se deseja instalar um item
+read -p "Deseja copiar os arquivos do Panel Colorizer (KDE)? (s/n) " resposta
+# Converte a resposta para minúsculas para facilitar a comparação
+resposta=${resposta,,}
+
+# Verifica a resposta
+if [[ "$resposta" =~ ^(s|sim|y|yes)$ ]]; then
+    echo "Copiando Panel Colorizer"
+    ln -s $(pwd)/config/panel-colorizer ~/.config/
+fi
 
 # FONTS
 
