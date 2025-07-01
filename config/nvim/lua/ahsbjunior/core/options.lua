@@ -3,7 +3,7 @@ vim.cmd("let g:netrw_liststyle = 3")
 local opt = vim.opt -- for conciseness
 
 -- line numbers
--- opt.relativenumber = true -- show relative line numbers
+opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
@@ -35,7 +35,7 @@ opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+opt.clipboard:append({"unnamed", "unnamedplus"}) -- use system clipboard as default register
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
