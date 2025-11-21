@@ -29,7 +29,7 @@ sudo pacman -Syu
 Instalar algumas fontes
 
 ```Bash
-sudo pacman -S ttf-dejavu noto-fonts noto-fonts-emoji ttf-liberation
+sudo pacman -S ttf-font-awesome ttf-dejavu noto-fonts noto-fonts-emoji ttf-liberation
 ```
 
 Instalando os portais, que são os dialogs que aparecem quando preciso de um
