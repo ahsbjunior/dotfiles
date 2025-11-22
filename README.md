@@ -38,7 +38,6 @@ arquivo. Aqui estamos instalando o portal [XDG Desktop Portal Hyprland](https://
 ```Bash
 pacman -S xdg-desktop-portal-hyprland
 ```
-
 Algumas configurações extras no Pacman a serem feitas no arquivo /etc/pacman.conf
 
 - Aumentar o número de downloads simultâneos
@@ -49,6 +48,9 @@ Na seção __Misc options__, desmarcar as opções:
 - ParallelDownloads = 5
 
 Adicionar _ILoveCandy_, para deixar a saída do pacman animada.
+
+#### Gerenciador AUR
+Nós vamos utilizar o [YAY](https://github.com/Jguer/yay) para gerenciar. Siga as instruções no Github da conta.
 
 ### Hyprland
 
