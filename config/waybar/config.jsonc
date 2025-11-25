@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["network", "keyboard-state", "group/monitor", "clock", "group/group-power"],
+    "modules-right": ["network", "pulseaudio", "keyboard-state", "group/monitor", "clock", "group/group-power"],
 
 
     "hyprland/workspaces": {
