@@ -16,16 +16,17 @@
     },
 
     "network": {
-        "interface": "wlp2s0",
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format": "{icon}",
+        "format-wifi": "{icon}  {essid}",
+        "format-ethernet": "󰀂",
+        "format-disconnected": "󰤮",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
+        "interval": 3,
+        "spacing": 1,
+        "on-click": "omarchy-launch-wifi"
     },
 
 
@@ -66,6 +67,26 @@
     },
 
 
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+        "tooltip-format": "Uso de CPU: {usage}%\nNúcleos: {cores}",
+        "on-click": "$TERMINAL -e btop",
+    },
+    "memory": {
+        "format": "󰍛  {}%",
+        "tooltip": true,
+        "tooltip-format": "RAM en uso: {used} / {total} ({percentage}%)"
+    },
+    "disk": {
+        "format": "  {percentage_free}%",
+        "tooltip": true,
+        "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
+    },
+
+
+
+
     "group/group-power": {
         "orientation": "inherit",
         "drawer": {
@@ -99,6 +120,42 @@
         "format": "",
         "tooltip": false,
         "on-click": "shutdown now"
-    }
+    },
+
+
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "",
+        "tooltip-format": "Devices connected: {num_connections}",
+        "on-click": "blueberry"
+    },
+    "pulseaudio_slider": {
+        "format": "{volume}%",
+        "tooltip": false,
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": " {format_source}",
+        "on-click": "$TERMINAL --class=Wiremix -e wiremix",
+        "on-click-right": "pamixer -t",
+        "tooltip-format": "Playing at {volume}%",
+        "scroll-step": 5,
+        "format-icons": {
+        "default": [
+            "",
+            ""
+        ]
+        }
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+
+
+
 
 }
