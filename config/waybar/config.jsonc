@@ -1,0 +1,104 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    "modules-right": ["network", "keyboard-state", "group/monitor", "clock", "group/group-power"],
+
+
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+                 "*": 4 // 4 workspaces by default on every monitor
+        },
+        "workspace-taskbar": {
+            "enable": true,
+            "update-active-window": true
+        }
+    },
+
+    "network": {
+        "interface": "wlp2s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+
+
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": true,
+        "format": {
+            "numlock": "{icon}",
+            "capslock": "A {icon}"                                                                                                                                                       
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "clock": {
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%H.%M}",
+        "tooltip-format": "{:%Y-%m-%d}"
+    },
+
+
+    "group/monitor" : {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "disk", // First element is the "group leader" and won't ever be hidden
+            "cpu",
+            "memory",
+            "temperature"
+        ]
+    },
+
+
+    "group/group-power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power", // First element is the "group leader" and won't ever be hidden
+            "custom/quit",
+            "custom/lock",
+            "custom/reboot"
+        ]
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    }
+
+}
