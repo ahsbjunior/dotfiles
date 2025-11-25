@@ -49,6 +49,16 @@ Na seção __Misc options__, desmarcar as opções:
 
 Adicionar _ILoveCandy_, para deixar a saída do pacman animada.
 
+#### Codecs
+Também vamos instalar alguns codecs:
+
+```Bash
+sudo pacman -S ffmpeg gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav gstreamer
+
+```
+
+
+
 #### Gerenciador AUR
 Nós vamos utilizar o [YAY](https://github.com/Jguer/yay) para gerenciar. Siga as instruções no Github da conta.
 
