@@ -38,18 +38,21 @@ arquivo. Aqui estamos instalando o portal [XDG Desktop Portal Hyprland](https://
 ```Bash
 pacman -S xdg-desktop-portal-hyprland
 ```
+
 Algumas configurações extras no Pacman a serem feitas no arquivo /etc/pacman.conf
 
 - Aumentar o número de downloads simultâneos
 - Habilitar a configuração de cores
 
 Na seção __Misc options__, desmarcar as opções:
+
 - Color (para deixar o pacman colorido)
 - ParallelDownloads = 5
 
 Adicionar _ILoveCandy_, para deixar a saída do pacman animada.
 
 #### Codecs
+
 Também vamos instalar alguns codecs:
 
 ```Bash
@@ -57,10 +60,18 @@ sudo pacman -S ffmpeg gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plu
 
 ```
 
-
-
 #### Gerenciador AUR
+
 Nós vamos utilizar o [YAY](https://github.com/Jguer/yay) para gerenciar. Siga as instruções no Github da conta.
+
+#### Keyd (deamon de teclado)
+
+Instale o keyd para configurar o teclado:
+
+```Bash
+sudo pacman -S keyd
+sudo ln -s $(pwd)/config/keyd /etc/
+```
 
 ### Hyprland
 

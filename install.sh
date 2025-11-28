@@ -22,6 +22,9 @@ echo "COPIANDO ARQUIVOS DO KITTY"
 # KITTY
 ln -s $(pwd)/config/kitty ~/.config/
 
+echo "==== INSTALANDO KEYD (teclado)"
+sudo pacman -S keyd
+sudo ln -s $(pwd)/config/keyd /etc/
 
 # Pergunta se deseja instalar um item
 read -p "Deseja copiar os arquivos do Panel Colorizer (KDE)? (s/n) " resposta
