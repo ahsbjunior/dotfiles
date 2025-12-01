@@ -42,3 +42,10 @@ keymap.set("n", "<C-a>", "ggVG", {desc = "CTRL-A to select all"})
 
 -- Comentarios em python
 keymap.set("v", "<leader>c#", ":'<,'>s:^:#<CR>", {desc = "Add # to comment Python code."})
+
+-- Tree
+keymap.set("n", "<leader>ee", "<cmd>Neotree toggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+keymap.set("n", "<leader>eb", "<cmd>Neotree source=buffers position=float<CR>", { desc = "Shows buffers" }) -- Shows buffers
+--keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
+-- keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
+-- keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
