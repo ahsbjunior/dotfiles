@@ -64,14 +64,6 @@ sudo pacman -S ffmpeg gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plu
 
 Nós vamos utilizar o [YAY](https://github.com/Jguer/yay) para gerenciar. Siga as instruções no Github da conta.
 
-#### Keyd (deamon de teclado)
-
-Instale o keyd para configurar o teclado:
-
-```Bash
-sudo pacman -S keyd
-sudo ln -s $(pwd)/config/keyd /etc/
-```
 
 ### Hyprland
 
@@ -86,3 +78,41 @@ source = ~/.config/hypr/envs.conf
 source = ~/.config/hypr/looknfeel.conf
 source = ~/.config/hypr/autostart.conf
 ```
+
+#### Cedilha
+Configurar a cedilha foi um parto, principalmente no Chrome/Chromium. Para tal, siga o seguinte passo:
+
+- Instale o Fcitx5:
+```Bash
+sudo pacman -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool
+```
+
+- Configuração do ambiente: crie um arquivo de ambiente dedicado:
+```Bash
+mkdir -p ~/.config/environment.d/
+nvim ~/.config/environment.d/fcitx5.conf
+```
+
+- No arquivo adicione as seguintes linhas:
+```TOML
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+INPUT_METHOD=fcitx
+SDL_IM_MODULE=fcitx
+```
+
+- Coloque para iniciar o Fcitx5 no Hyprland em segundo plano no arquivo ~/.config/hypr/hyprland.conf:
+```
+# Inicializa o daemon do fcitx5
+exec-once = fcitx5 -d
+```
+
+- Execute a ferramenta para adicionar o layout do teclado:
+```Bash
+fcitx5-configtool
+```
+
+- Na janela de configuração, adicione o método de entrada do teclado. No nosso caso, adicione o US International with dead keys.
+
+- Reinicie o computador.
