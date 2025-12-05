@@ -116,3 +116,16 @@ fcitx5-configtool
 - Na janela de configuração, adicione o método de entrada do teclado. No nosso caso, adicione o US International with dead keys.
 
 - Reinicie o computador.
+
+#### SSH para git
+Para adicionar o certificado no git, rode o seguinte comando:
+
+```Bash
+ssh-keygen -t ed25519 -C "<email>"
+```
+
+Após gerar, rode o código abaixo:
+
+```Bash
+cat ~/.ssh/id_ed25519.pub
+```
