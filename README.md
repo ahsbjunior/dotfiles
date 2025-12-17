@@ -9,6 +9,7 @@
 - Waybar
 - Hyprpaper
 - Rofi
+- Gradia (para papel de parede)
 
 Arch Linux:
 

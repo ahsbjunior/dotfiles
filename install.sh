@@ -22,6 +22,12 @@ echo "COPIANDO ARQUIVOS DO KITTY"
 # KITTY
 ln -s $(pwd)/config/kitty ~/.config/
 
+
+# VPN Mobits
+ln -s $(pwd)/config/vpnmobits ~/.local/bin/
+sudo pacman -S openvpn
+chmod +x ~/.local/bin/vpnmobits
+
 # Pergunta se deseja instalar um item
 read -p "Deseja copiar os arquivos do Panel Colorizer (KDE)? (s/n) " resposta
 # Converte a resposta para minúsculas para facilitar a comparação
